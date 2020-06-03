@@ -1,0 +1,13 @@
+[{
+    "nome": "charmander",
+    "habilidades": ["solar-power", "blaze"],
+    "tipo": ["fire"]
+}, {
+    "nome": "diglett",
+    "habilidades": ["sand-force", "arena-trap", "sand-veil"],
+    "tipo": ["ground"]
+}, {
+    "nome": "bulbasaur",
+    "habilidades": ["chlorophyll", "overgrow"],
+    "tipo": ["poison", "grass"]
+}]
