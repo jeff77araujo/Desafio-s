@@ -19,7 +19,7 @@ async function buscarDadosPokemon(nome) {
             pokemon.abilities.forEach((habilidade) => {
                 nomeDasHabilidades.push(habilidade.ability.name);
             })
-            console.log(nomeDasHabilidades);
+            // console.log(nomeDasHabilidades);
 
             var nomeDosTipos = [];
             pokemon.types.forEach((tipo) => {
@@ -85,3 +85,7 @@ async function main() {
     }
 }
 main()
+
+
+
+// teste para codar
