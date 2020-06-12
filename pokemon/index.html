@@ -11,7 +11,36 @@
   <title>PokeAPI</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="jquery/jquery-ui.css">
+
+  <style>
+    .ui-autocomplete {
+      max-height: 275px;
+      overflow-y: auto;
+      /* prevent horizontal scrollbar */
+      overflow-x: hidden;
+    }
+
+    /* IE 6 doesn't support max-height
+     * we use height instead, but this forces the menu to always be this tall
+     */
+    * html .ui-autocomplete {
+      height: 275px;
+    }
+
+    .ui-menu img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .ui-menu li span {
+      font-size: 1.5em;
+      padding: 0 0 5px 5px;
+      margin: 0 0 15px 0 !important;
+      white-space: nowrap;
+    }
+  </style>
 
   <!-- Custom fonts for this template -->
   <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
@@ -23,7 +52,7 @@
 
 </head>
 
-<body>
+<body onload="geraListagem()">
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
@@ -35,6 +64,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/jefferson-oliveira-de-araujo-58639a178/" target="_blank">Linkedin</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="https://github.com/jeff77araujo" target="_blank">GitHub</a>
           </li>
@@ -52,16 +84,16 @@
         <h1 id="header" class="masthead-heading mb-0">PokéDex</h1>
         <h2 class="masthead-subheading mb-0">Pesquise seu pokémon!</h2>
         <div>
-          <input id="caixaDeTexto" type="text" class="form-control" placeholder="Digite o nome ou numero Pokémon"
-            aria-label="Digite o nome ou numero Pokémon " aria-describedby="basic-addon2">
+          <input id="caixaDeTexto" type="text" class="form-control" placeholder="Digite nome ou numero do Pokémon"
+            aria-label="Digite o nome ou numero Pokémon " aria-describedby="basic-addon2" onclick="organizaListagem()" onkeydown="organizaListagem()">
         </div>
-        <a onclick="nomeIdDoPokemon()" href="#nome" class="btn btn-primary btn-xl rounded-pill mt-5">Pesquisar</a>
+        <a onclick="nomeIdDoPokemon(); verificaCaixaDeTexto()" href="#nome" class="btn btn-primary btn-xl rounded-pill mt-5">Pesquisar</a>
       </div>
     </div>
-    <div class="bg-circle-1 bg-circle"></div>
+    <!-- <div class="bg-circle-1 bg-circle"></div>
     <div class="bg-circle-2 bg-circle"></div>
     <div class="bg-circle-3 bg-circle"></div>
-    <div class="bg-circle-4 bg-circle"></div>
+    <div class="bg-circle-4 bg-circle"></div> -->
   </header>
 
   <section>
@@ -85,7 +117,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-5 bg-black">
+  <footer class="py-2 bg-black">
     <div class="container">
       <p class="m-0 text-center text-white small">Jeff Araujo &copy; My Website 2020</p>
     </div>
@@ -93,10 +125,12 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="jquery/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="js/scriptPoke.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 </body>
 
