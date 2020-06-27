@@ -87,7 +87,7 @@
           <input id="caixaDeTexto" type="text" class="form-control" placeholder="Digite nome ou numero do Pokémon"
             aria-label="Digite o nome ou numero Pokémon " aria-describedby="basic-addon2" onclick="organizaListagem()" onkeydown="organizaListagem()">
         </div>
-        <a onclick="nomeIdDoPokemon(); verificaCaixaDeTexto()" href="#nome" class="btn btn-primary btn-xl rounded-pill mt-5">Pesquisar</a>
+        <a id="btn" onclick="nomeIdDoPokemon(); verificaCaixaDeTexto(); resetador()" href="#imagemPoke" class="btn btn-primary btn-xl rounded-pill mt-5">Pesquisar</a>
       </div>
     </div>
     <!-- <div class="bg-circle-1 bg-circle"></div>
@@ -119,7 +119,7 @@
   <!-- Footer -->
   <footer class="py-2 bg-black">
     <div class="container">
-      <p class="m-0 text-center text-white small">Jeff Araujo &copy; My Website 2020</p>
+      <p id="teste" class="m-0 text-center text-white small">Jeff Araujo &copy; My Website 2020</p>
     </div>
     <!-- /.container -->
   </footer>
